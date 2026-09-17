@@ -1,0 +1,20 @@
+{
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "oxc.path.node": "/home/wilfred/.nvm/versions/node/v25.0.0/bin/node",
+  "oxc.path.oxlint": "./node_modules/.bin/oxlint",
+  "oxc.path.oxfmt": "./node_modules/.bin/oxfmt",
+  "git.autorefresh": true,
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  }
+}

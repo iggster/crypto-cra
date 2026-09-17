@@ -1,0 +1,40 @@
+{
+  "name": "crypto-cra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b && pnpm -r build",
+    "dev": "pnpm -r --parallel --stream dev",
+    "start": "pnpm --filter tan-start-app start",
+    "format": "oxfmt .",
+    "lint": "oxlint .",
+    "web": "pnpm --filter web preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.3",
+    "oxfmt": "^0.68.0",
+    "oxlint": "^1.83.0",
+    "typescript": "^7.0.2"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.24.0",
+      "onFail": "download"
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@11.24.0"
+}
