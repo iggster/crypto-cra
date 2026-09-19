@@ -1,5 +1,5 @@
 node_modules/
-.vscode
+.vscode/
 .nx/cache
 .nx/workspace-data
 .nx/migrate-runs
