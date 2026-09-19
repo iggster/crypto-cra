@@ -6,11 +6,12 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    react(),
     tanstackRouter({
-      routesDirectory: "./src/routes",
-      generatedRouteTree: "./src/routeTree.gen.ts",
+      target: "react",
+      autoCodeSplitting: true,
+      routeFileIgnorePattern: "(main|__routes)\\.tsx$",
     }),
+    react(),
     babel({ presets: [reactCompilerPreset()] }),
   ],
 });
