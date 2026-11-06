@@ -1,0 +1,42 @@
+# Turborepo task caching
+.turbo/
+
+# Dependency directories (pnpm & Node)
+node_modules/
+.pnpm-store/
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# IDEs and editors
+.vscode/
+
+# React & TypeScript build outputs
+dist/
+out/
+build/
+.next/
+*.tsbuildinfo
+
+# Tooling and compiler caches
+.eslintcache
+.stylelintcache
+.vite/
+.parcel-cache/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Operating System files
+.DS_Store
+Thumbs.db
