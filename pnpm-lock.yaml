@@ -187,6 +187,12 @@ importers:
       '@fastify/cors':
         specifier: ^11.2.0
         version: 11.4.0
+      '@fastify/helmet':
+        specifier: ^13.2.0
+        version: 13.2.0
+      '@trpc/server':
+        specifier: ^11.25.0
+        version: 11.25.0(fastify@5.12.8)(typescript@6.0.3)
       '@workspace/types':
         specifier: workspace:*
         version: link:../../packages/types
@@ -199,6 +205,9 @@ importers:
       fastify:
         specifier: ^5.7.4
         version: 5.12.8
+      fastify-plugin:
+        specifier: ^6.0.1
+        version: 6.0.1
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -215,6 +224,15 @@ importers:
 
   apps/web:
     dependencies:
+      '@tanstack/react-query':
+        specifier: ^5.107.1
+        version: 5.107.1(@types/react@19.3.0)(react@19.3.1)
+      '@trpc/client':
+        specifier: ^11.25.0
+        version: 11.25.0(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(typescript@6.0.3)
+      '@trpc/react-query':
+        specifier: ^11.25.0
+        version: 11.25.0(@tanstack/react-query@5.107.1(@types/react@19.3.0)(react@19.3.1))(@trpc/client@11.25.0(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(typescript@6.0.3))(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(react@19.3.1)(typescript@6.0.3)
       '@workspace/types':
         specifier: workspace:*
         version: link:../../packages/types
@@ -795,6 +813,9 @@ packages:
   '@fastify/forwarded@3.1.2':
     resolution: {integrity: sha512-89WiRG+hW3VQSfCwg4Hb8b43PeyEX15K5+lEfsZ4EUth/FyOjS/lv8HsVuswUNXWiSnxMGNouE/fq/0w3VumHQ==}
 
+  '@fastify/helmet@13.2.0':
+    resolution: {integrity: sha512-2u41U5hR9o1u3HUHLT3Njp7vWuWw+XXw8qCBwVY17pRQAN179YYKiU9f7/qEn1ITabgNTkq/Yk6gmrYPSraagA==}
+
   '@fastify/merge-json-schemas@0.2.2':
     resolution: {integrity: sha512-d/gx9sRbUCVgGRGzma46wLcwiY8noTqO2Nmjg/vbTARxHRE5bdh5PIL8s97Lt1X7ScRWRW52eVYxwIoPwIdVUA==}
 
@@ -1227,6 +1248,54 @@ packages:
     resolution: {integrity: sha512-yYU8cogLeSh/ms2jh8Fj7jaba/EWa7Ja6GoUqYZaraEuCI5YS6ms6ObZgjjedm+jm6XZjdNRWBpPP6Z86oOxcw==}
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
+
+  '@tanstack/query-core@5.107.1':
+    resolution: {integrity: sha512-PSyAik11oQBEVOiVy5hjZWHmoUqOXqK1WYy4v55mcxozEfKaQgpUMsgnXhWjuESzSht8JfzqMS1m6M/9CpNgvg==}
+
+  '@tanstack/react-query@5.107.1':
+    resolution: {integrity: sha512-udCOOLp3ZAheUrIHLCe+ZZge6nr2ZUrGMSWcCuXsjY1Bf2JeeE09oxst97PILiCY6N8xo/7bIo3Hvz13zh06FA==}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@trpc/client@11.25.0':
+    resolution: {integrity: sha512-sDLNepXpsR+b1KnnZ/9J3wIMaRaqE//PGzAAaUVM2Mpv9/POU4NCI5WDyu1LSBhLNuDycTHgGEE3tfClPEsiBA==}
+    peerDependencies:
+      '@trpc/server': 11.25.0
+      typescript: '>=5.7.2'
+
+  '@trpc/react-query@11.25.0':
+    resolution: {integrity: sha512-VYlT3+K3NJ8vjfxXbaZGANaD4ZH6dLIFYi2ASVMcWmsAY2OxUEXyYMwnUyivXY98g9yUidk6D6iScWlkZq4sAg==}
+    peerDependencies:
+      '@tanstack/react-query': ^5.80.3
+      '@trpc/client': 11.25.0
+      '@trpc/server': 11.25.0
+      react: '>=18.2.0'
+      typescript: '>=5.7.2'
+
+  '@trpc/server@11.25.0':
+    resolution: {integrity: sha512-WnUlGgLdaRoOKbLKn/t3+6cnjPJndNKvJZYJ7RXSZwFOa1dam6Z8atf551KE0vz2vhyxRtcnk+58P7M/ztAjNw==}
+    peerDependencies:
+      '@types/aws-lambda': '*'
+      '@types/express': '*'
+      '@types/ws': '*'
+      fastify: '*'
+      next: '*'
+      typescript: '>=5.7.2'
+    peerDependenciesMeta:
+      '@types/aws-lambda':
+        optional: true
+      '@types/express':
+        optional: true
+      '@types/ws':
+        optional: true
+      fastify:
+        optional: true
+      next:
+        optional: true
 
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
@@ -1917,6 +1986,10 @@ packages:
   hasown@2.0.4:
     resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
     engines: {node: '>= 0.4'}
+
+  helmet@8.3.0:
+    resolution: {integrity: sha512-Qgpiaws3Sm30Av8Eah6sjMCZZwjlBu+E68rhpCWBshY1lb09HtLwj5GviX0OyQIn+ulUS0iX0AxN5n3tLZzz1w==}
+    engines: {node: '>=18.0.0'}
 
   hermes-estree@0.25.1:
     resolution: {integrity: sha512-0wUoCcLp+5Ev5pDW2OriHC2MJCbwLwuRx+gAqMTOkGKJJiBCLjtrvy4PWUGn6MIVefecRpzoOZ/UV6iGdOr+Cw==}
@@ -3334,6 +3407,11 @@ snapshots:
 
   '@fastify/forwarded@3.1.2': {}
 
+  '@fastify/helmet@13.2.0':
+    dependencies:
+      fastify-plugin: 6.0.1
+      helmet: 8.3.0
+
   '@fastify/merge-json-schemas@0.2.2':
     dependencies:
       dequal: 2.0.3
@@ -3701,6 +3779,34 @@ snapshots:
       '@tailwindcss/oxide': 4.3.3
       tailwindcss: 4.3.3
       vite: 8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)
+
+  '@tanstack/query-core@5.107.1': {}
+
+  '@tanstack/react-query@5.107.1(@types/react@19.3.0)(react@19.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.107.1
+      react: 19.3.1
+    optionalDependencies:
+      '@types/react': 19.3.0
+
+  '@trpc/client@11.25.0(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(typescript@6.0.3)':
+    dependencies:
+      '@trpc/server': 11.25.0(fastify@5.12.8)(typescript@6.0.3)
+      typescript: 6.0.3
+
+  '@trpc/react-query@11.25.0(@tanstack/react-query@5.107.1(@types/react@19.3.0)(react@19.3.1))(@trpc/client@11.25.0(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(typescript@6.0.3))(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(react@19.3.1)(typescript@6.0.3)':
+    dependencies:
+      '@tanstack/react-query': 5.107.1(@types/react@19.3.0)(react@19.3.1)
+      '@trpc/client': 11.25.0(@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3))(typescript@6.0.3)
+      '@trpc/server': 11.25.0(fastify@5.12.8)(typescript@6.0.3)
+      react: 19.3.1
+      typescript: 6.0.3
+
+  '@trpc/server@11.25.0(fastify@5.12.8)(typescript@6.0.3)':
+    dependencies:
+      typescript: 6.0.3
+    optionalDependencies:
+      fastify: 5.12.8
 
   '@ts-morph/common@0.27.0':
     dependencies:
@@ -4430,6 +4536,8 @@ snapshots:
   hasown@2.0.4:
     dependencies:
       function-bind: 1.1.2
+
+  helmet@8.3.0: {}
 
   hermes-estree@0.25.1: {}
 

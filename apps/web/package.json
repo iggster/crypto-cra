@@ -12,8 +12,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@workspace/ui": "workspace:*",
+    "@tanstack/react-query": "^5.107.1",
+    "@trpc/client": "^11.25.0",
+    "@trpc/react-query": "^11.25.0",
     "@workspace/types": "workspace:*",
+    "@workspace/ui": "workspace:*",
     "axios": "^1.21.0",
     "dotenv": "^18.0.9",
     "lucide-react": "^1.66.0",

@@ -23,7 +23,7 @@
     "typescript-eslint": "^8"
   },
   "exports": {
-    "./exchange-schema/*": "./src/exchange-schema/*.ts",
+    "./exchange-schema/*": "./src/csv-exchange-type/*.ts",
     "./user-schema/*": "./src/user-schema/*.ts",
     "./env-schema/*": "./src/env-schema/*.ts"
   }
